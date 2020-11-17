@@ -43,3 +43,10 @@ func GetConfigString(name string, key string) string {
 	}
 	return ""
 }
+
+func GetConfigBool(name string,key string) bool{
+	if config, ok := _config[name]; ok {
+		return config.GetBool(key)
+	}
+	return false
+}
